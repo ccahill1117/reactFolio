@@ -9,13 +9,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ProjectCard from './Projects';
 
-const myProjects = [
-  {
-    title: "oh",
-    text: "fun",
-    link: "www.christophercahill.co",
-  }
-];
 
 function Project(){
   var projectCardGrid = {
@@ -26,24 +19,32 @@ function Project(){
       justifyContent: 'center',
   }
 
+  const myProjects = [
+    {
+      title: "oh",
+      text: "fun",
+      link: "www.christophercahill.co",
+    },
+    {
+      title: "another",
+      text: "funny",
+      link: "thing.com",
+    }
+  ];
+
+
   return (
-    <div>ok?
+    <div>
 
-      <div>
-        <div style={projectCardGrid}>
-          {myProjects.map((project) =>
-            <ProjectCard
-              title={project.title}
-              text={project.text}
-              link={project.link}
+        {myProjects.map((project) =>
 
-            />
-          )}
+            <p>
+              {project.title}, {project.text}, {project.link}
+            </p>
+
+        )}
 
 
-
-        </div>
-      </div>
 
 
     </div>
