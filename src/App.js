@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './lib/Header';
 import Landing from './lib/Landing';
 import Footer from './lib/Footer';
+import Background from './lib/Background';
 import logo from './logo.svg';
 import './App.css';
 
@@ -23,6 +24,8 @@ const App = () => {
 
       <Switch>
       <Route exact path='/' component={Landing} />
+      <Route exact path='/background' component={Background} />
+
       </Switch>
 
 
