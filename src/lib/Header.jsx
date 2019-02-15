@@ -16,7 +16,10 @@ function Header(props){
   const { classes } = props;
 
   return (
-    <div>
+    <div style={{
+        margin: '20px',
+        
+      }}>
       <Typography component="h3" variant="h2" gutterBottom>
         Christopher Thomas Cahill
       </Typography>
