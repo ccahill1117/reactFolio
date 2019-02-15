@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-function Landing(){
+function Interest(){
   return (
     <div style={{
       color: 'blue',
@@ -12,26 +12,20 @@ function Landing(){
 
     }}>
       <div>
-        <h2>
-          <Link to="/interest">See my interests</Link>
-        </h2>
+        <h2>Item of interest....</h2>
       </div>
       <div>
-        <h2>
-          <Link to="/bio">My biography</Link>
-        </h2>
+        <h2>Item of interest....</h2>
       </div>
       <div>
-        <h2>
-          <Link to="/project">Some projects I've worked on</Link>
-        </h2>
-    </div>
+        <h2>Item of interest....</h2>
+      </div>
       <div>
-        <h2>stuff</h2>
+        <h2>Item of interest....</h2>
       </div>
 
     </div>
   );
 }
 
-export default Landing;
+export default Interest;

@@ -4,6 +4,9 @@ import Header from './lib/Header';
 import Landing from './lib/Landing';
 import Footer from './lib/Footer';
 import Background from './lib/Background';
+import Interest from './lib/Interests';
+import Project from './lib/Projects';
+import Bio from './lib/Bio';
 import logo from './logo.svg';
 import PropTypes from 'prop-types';
 import './App.css';
@@ -26,6 +29,10 @@ const App = () => {
         <Switch>
         <Route exact path='/' component={Landing} />
         <Route exact path='/background' component={Background} />
+        <Route exact path='/interest' component={Interest} />
+        <Route exact path='/bio' component={Bio} />
+        <Route exact path='/project' component={Project} />
+
         </Switch>
       </div>
 

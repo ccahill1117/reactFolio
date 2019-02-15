@@ -8,8 +8,6 @@ function Footer(){
     <div>
       <Link to="/">Home Page</Link>
       <hr />
-      <Link to="/background">Background</Link>
-
     </div>
   );
 }
