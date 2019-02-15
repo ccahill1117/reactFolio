@@ -6,8 +6,9 @@ import PropTypes from 'prop-types';
 function Footer(){
   return (
     <div>
-      <Link to="/">Home Page</Link>
+      Copyright Christopher Thomas Cahill 2019
       <hr />
+      <Link to="/">Home Page</Link>
     </div>
   );
 }
