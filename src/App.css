@@ -25,7 +25,28 @@
 
 .wrapper {
   display: grid;
+  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+  grid-template-rows: auto;
   color: tomato;
+  grid-template-areas:
+  "header header header header"
+  "main main . sidebar"
+  "footer footer footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.switch {
+  grid-column-start: 1;
+  grid-column-end: 5;
+
+
 }
 
 @keyframes App-logo-spin {
