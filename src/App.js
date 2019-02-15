@@ -7,6 +7,7 @@ import Background from './lib/Background';
 import Interest from './lib/Interests';
 import Project from './lib/Projects';
 import Bio from './lib/Bio';
+import Error404 from './lib/Error404';
 import logo from './logo.svg';
 import PropTypes from 'prop-types';
 import './App.css';
@@ -27,12 +28,13 @@ const App = () => {
 
       <div className="switch">
         <Switch>
-        <Route exact path='/' component={Landing} />
-        <Route exact path='/background' component={Background} />
-        <Route exact path='/interest' component={Interest} />
-        <Route exact path='/bio' component={Bio} />
-        <Route exact path='/project' component={Project} />
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/background' component={Background} />
+          <Route exact path='/interest' component={Interest} />
+          <Route exact path='/bio' component={Bio} />
+          <Route exact path='/project' component={Project} />
 
+          <Route component={Error404} />
         </Switch>
       </div>
 
