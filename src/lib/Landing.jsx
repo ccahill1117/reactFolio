@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Header(){
+function Landing(){
   return (
     <div>
-      <h1>funky lil header</h1>
+      <h1>this is the landing page ya kno</h1>
 
     </div>
   );
 }
 
-export default Header;
+export default Landing;
