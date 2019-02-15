@@ -4,8 +4,25 @@ import PropTypes from 'prop-types';
 
 function Landing(){
   return (
-    <div>
-      <h1>this is the landing page ya kno</h1>
+    <div style={{
+      color: 'blue',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, 200px)',
+      justifyContent: 'center',
+
+    }}>
+      <div>
+        <h2>stuff</h2>
+      </div>
+      <div>
+        <h2>stuff</h2>
+      </div>
+      <div>
+        <h2>stuff</h2>
+      </div>
+      <div>
+        <h2>stuff</h2>
+      </div>
 
     </div>
   );
