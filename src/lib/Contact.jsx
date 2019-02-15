@@ -16,17 +16,14 @@ function Contact(){
         <h2>Reach out @</h2>
         <div>
           <Typography variant="h2">
-            chris /
+            chris
             <br></br>
-            at /
+            @
             <br></br>
             christophercahill.co
           </Typography>
         </div>
       </div>
-
-
-
 
     </div>
   );
