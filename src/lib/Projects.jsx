@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import ProjectCard from './Projects';
+import ProjectCard from './ProjectCard';
 
+const myProjects = [
+  {
+    title: "oh",
+    text: "fun",
+    link: "www.christophercahill.co",
+  },
+  {
+    title: "another",
+    text: "funny",
+    link: "thing.com",
+  }
+];
 
 function Project(){
   var projectCardGrid = {
@@ -19,40 +25,21 @@ function Project(){
       justifyContent: 'center',
   }
 
-  const myProjects = [
-    {
-      title: "oh",
-      text: "fun",
-      link: "www.christophercahill.co",
-    },
-    {
-      title: "another",
-      text: "funny",
-      link: "thing.com",
-    }
-  ];
-
 
   return (
     <div>
-
-        {myProjects.map((project, index) =>
-
+        {myProjects.map((item, i) =>
             <ProjectCard
-              title={project.title}
-              key={index}
-              >
-
-            </ProjectCard>
-
-        )}
-
-
-
-
+              title={item.title}
+              text={item.text}
+              link={item.link}
+              key={i}
+              />
+          )}
     </div>
-  );
 
+
+  );
 
 }
 
