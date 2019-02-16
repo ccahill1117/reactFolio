@@ -13,9 +13,10 @@ function ProjectCard(props){
   return (
     <div>
       <div>
-        <p>{props.title}</p>
-          <p>{props.text}</p>
-            <p>{props.string}</p>
+        <div>
+            <p>{props.text}</p>
+              <p>{props.string}</p>
+        </div>
       </div>
     </div>
 

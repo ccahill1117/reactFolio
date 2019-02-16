@@ -36,11 +36,14 @@ function Project(){
   return (
     <div>
 
-        {myProjects.map((project) =>
+        {myProjects.map((project, index) =>
 
-            <p>
-              {project.title}, {project.text}, {project.link}
-            </p>
+            <ProjectCard
+              title={project.title}
+              key={index}
+              >
+
+            </ProjectCard>
 
         )}
 
