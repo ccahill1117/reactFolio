@@ -7,6 +7,7 @@ import Background from './lib/Background';
 import Interest from './lib/Interests';
 import Project from './lib/Projects';
 import Bio from './lib/Bio';
+import Fun from './lib/Fun';
 import Contact from './lib/Contact';
 import Error404 from './lib/Error404';
 import logo from './logo.svg';
@@ -35,6 +36,7 @@ const App = () => {
           <Route exact path='/bio' component={Bio} />
           <Route exact path='/project' component={Project} />
           <Route exact path='/contact' component={Contact} />
+          <Route exact path='/fun' component={Fun} />
 
           <Route component={Error404} />
         </Switch>

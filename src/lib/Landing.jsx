@@ -27,7 +27,9 @@ function Landing(){
         </h2>
     </div>
       <div>
-        <h2>stuff</h2>
+        <h2>
+          <Link to="/fun">A fun thing</Link>
+        </h2>
       </div>
 
     </div>
