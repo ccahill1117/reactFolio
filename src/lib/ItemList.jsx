@@ -24,8 +24,5 @@ function ItemList(props){
 
 
 
-ItemList.propTypes = {
-  itemList: PropTypes.array
-};
 
 export default ItemList;

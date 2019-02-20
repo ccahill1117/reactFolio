@@ -26,11 +26,55 @@ class App extends React.Component {
     this.handleAddingNewItemToList = this.handleAddingNewItemToList.bind(this);
   }
 
+  updateItemElapsedWaitTime() {
+     console.log("check");
+     let newMasterItemList = this.state.masterItemList.slice();
+     newMasterItemList.forEach((item) =>
+       item.formattedWaitTime = (item.timeCreated).fromNow(true)
+     );
+     this.setState({masterItemList: newMasterItemList})
+   }
+
   handleAddingNewItemToList(newItem){
     var newMasterItemList = this.state.masterItemList.slice();
+    newItem.formattedWaitTime = (newItem.timeCreated).fromNow(true);
     newMasterItemList.push(newItem);
     this.setState({masterItemList: newMasterItemList});
   }
+
+  componentWillUnmount(){
+    console.log('componentWillUnmount');
+    clearInterval(this.waitTimeUpdateTimer);
+  }
+
+  componentWillMount() {
+    console.log('componentWillMount');
+  }
+
+  componentWillReceiveProps() {
+    console.log('componentWillReceiveProps');
+  }
+
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate');
+    return true;
+  }
+
+  componentWillUpdate() {
+    console.log('componentWillUpdate');
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+
+ componentDidMount() {
+   console.log('hey');
+   this.waitTimeUpdateTimer = setInterval(() =>
+     this.updateItemElapsedWaitTime(),
+     1000
+   );
+ }
 
     render(){
       return (

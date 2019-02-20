@@ -19,15 +19,6 @@ class Fun extends React.Component {
   this.handleAddingNewItemToList = this.handleAddingNewItemToList.bind(this);
 }
 
-updateItemElapsedWaitTime() {
-   console.log("check");
-   let newMasterItemList = this.state.masterItemList.slice();
-   newMasterItemList.forEach((item) =>
-     item.formattedWaitTime = (item.timeCreated).fromNow(true)
-   );
-   this.setState({masterItemList: newMasterItemList})
- }
-
  componentWillUnmount(){
    console.log('componentWillUnmount');
    clearInterval(this.waitTimeUpdateTimer);
@@ -55,11 +46,21 @@ updateItemElapsedWaitTime() {
  }
 
 componentDidMount() {
+  console.log('hey');
   this.waitTimeUpdateTimer = setInterval(() =>
     this.updateItemElapsedWaitTime(),
     1000
   );
 }
+
+updateItemElapsedWaitTime() {
+   console.log("check");
+   let newMasterItemList = this.state.masterItemList.slice();
+   newMasterItemList.forEach((item) =>
+     item.formattedWaitTime = (item.timeCreated).fromNow(true)
+   );
+   this.setState({masterItemList: newMasterItemList})
+ }
 
 handleAddingNewItemToList(newItem){
   var newMasterItemList = this.state.masterItemList.slice();
@@ -71,7 +72,7 @@ handleAddingNewItemToList(newItem){
 render(){
   return (
     <div>
-      <Link to="/newitem">Create Ticket</Link>
+
     </div>
   );
 }
