@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 
 function NewItemForm(props){
@@ -9,7 +10,7 @@ function NewItemForm(props){
 
   function handleNewItemFormSubmission(event) {
     event.preventDefault();
-    props.onNewItemCreation({name: _name.value, blah: _blah.value});
+    props.onNewItemCreation({name: _name.value, blah: _blah.value, id: v4()});
     _name.value = '';
     _blah.value = '';
 

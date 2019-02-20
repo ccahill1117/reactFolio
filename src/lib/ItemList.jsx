@@ -4,13 +4,14 @@ import Item from './Item';
 import PropTypes from 'prop-types';
 
 function ItemList(props){
+  console.log(props.itemList);
   return (
     <div>
       <hr/>
       {props.itemList.map((item, index) =>
         <Item name={item.name}
           blah={item.blah}
-          key={index}/>
+          key={item.id}/>
       )}
     </div>
   );
