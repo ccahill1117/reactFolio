@@ -28,7 +28,12 @@ function Landing(){
     </div>
       <div>
         <h2>
-          <Link to="/fun">A fun thing</Link>
+          <Link to="/fun">Messages from friends</Link>
+        </h2>
+      </div>
+      <div>
+        <h2>
+          <Link to="/newitem">Leave a message on my page!</Link>
         </h2>
       </div>
 

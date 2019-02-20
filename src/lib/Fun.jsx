@@ -1,42 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ConfirmQuestion from './ConfirmQuestions';
+import ConfirmQuestion from './ConfirmQuestion';
+import NewItemForm from './NewItemForm';
+import ItemList from './ItemList';
+import NewItemControl from './NewItemControl';
+import { Switch, Route } from 'react-router-dom';
 
-class NewItem extends React.Component {
+class Fun extends React.Component {
+
 
   constructor(props) {
-    super(props);
-    this.state = {
-      formVisibleOnPage: false
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+  super(props);
+  this.state = {
+    masterItemList: []
+  };
+  this.handleAddingNewItemToList = this.handleAddingNewItemToList.bind(this);
+}
 
-  handleClick() {
-    this.setState({formVisibleOnPage: true});
-    console.log('click!', this.state.formVisibleOnPage);
-  }
+handleAddingNewItemToList(newItem){
+  var newMasterItemList = this.state.masterItemList.slice();
+  newMasterItemList.push(newItem);
+  this.setState({masterItemList: newMasterItemList});
+}
 
-  render(){
-    return (
-      <div style={{
-        color: 'blue',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, 200px)',
-        justifyContent: 'center',
+render(){
+  return (
+    <div>
 
-      }}>
-      <div>
-        <h2>new item control ! </h2>
-        <strong onClick={this.handleClick}>Click me to change my state</strong>
-      </div>
-
-      </div>
-    );
-  }
+      <Link to="/newitem">Create Ticket</Link>
+      
+    </div>
+  );
+}
 
 }
 
-
-export default NewItem;
+export default Fun;
