@@ -50,6 +50,7 @@ class App extends React.Component {
                 <Route exact path='/contact' component={Contact} />
 
                 <Route exact path='/fun' render={()=><ItemList itemList={this.state.masterItemList} />} />
+
                 <Route exact path='/newitem' render={()=><NewItemControl onNewItemCreation={this.handleAddingNewItemToList} />} />
 
 

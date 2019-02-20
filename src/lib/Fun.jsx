@@ -6,6 +6,7 @@ import NewItemForm from './NewItemForm';
 import ItemList from './ItemList';
 import NewItemControl from './NewItemControl';
 import { Switch, Route } from 'react-router-dom';
+import Moment from 'moment';
 
 class Fun extends React.Component {
 
@@ -18,8 +19,51 @@ class Fun extends React.Component {
   this.handleAddingNewItemToList = this.handleAddingNewItemToList.bind(this);
 }
 
+updateItemElapsedWaitTime() {
+   console.log("check");
+   let newMasterItemList = this.state.masterItemList.slice();
+   newMasterItemList.forEach((item) =>
+     item.formattedWaitTime = (item.timeCreated).fromNow(true)
+   );
+   this.setState({masterItemList: newMasterItemList})
+ }
+
+ componentWillUnmount(){
+   console.log('componentWillUnmount');
+   clearInterval(this.waitTimeUpdateTimer);
+ }
+
+ componentWillMount() {
+   console.log('componentWillMount');
+ }
+
+ componentWillReceiveProps() {
+   console.log('componentWillReceiveProps');
+ }
+
+ shouldComponentUpdate() {
+   console.log('shouldComponentUpdate');
+   return true;
+ }
+
+ componentWillUpdate() {
+   console.log('componentWillUpdate');
+ }
+
+ componentDidUpdate() {
+   console.log('componentDidUpdate');
+ }
+
+componentDidMount() {
+  this.waitTimeUpdateTimer = setInterval(() =>
+    this.updateItemElapsedWaitTime(),
+    1000
+  );
+}
+
 handleAddingNewItemToList(newItem){
   var newMasterItemList = this.state.masterItemList.slice();
+  newItem.formattedWaitTime = (newItem.timeCreated).fromNow(true);
   newMasterItemList.push(newItem);
   this.setState({masterItemList: newMasterItemList});
 }
@@ -27,9 +71,7 @@ handleAddingNewItemToList(newItem){
 render(){
   return (
     <div>
-
       <Link to="/newitem">Create Ticket</Link>
-      
     </div>
   );
 }
