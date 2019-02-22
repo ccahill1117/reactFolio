@@ -23,7 +23,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       masterItemList: [],
-      selectedTicket: null,
+      selectedItem: null,
     };
     this.handleAddingNewItemToList = this.handleAddingNewItemToList.bind(this);
     this.handleChangingSelectedItem = this.handleChangingSelectedItem.bind(this);
@@ -31,7 +31,7 @@ class App extends React.Component {
 
   handleChangingSelectedItem(item){
     this.setState({selectedItem: item});
-    console.log('The selected item is now: ' + this.state.selectedItem.names);
+    console.log('The selected item is now: ' + this.state.selectedItem.name);
   }
 
   updateItemElapsedWaitTime() {
@@ -102,8 +102,12 @@ class App extends React.Component {
                 <Route exact path='/contact' component={Contact} />
                 <Route exact path='/fun' render={()=><ItemList itemList={this.state.masterItemList} />} />
                 <Route exact path='/newitem' render={()=><NewItemControl onNewItemCreation={this.handleAddingNewItemToList} />} />
-                 <Route path='/admin' render={(props)=><Admin itemList={this.state.masterItemList} currentRouterPath={props.location.pathname} />} />
+
+               <Route path='/admin' render={(props)=><Admin itemList={this.state.masterItemList} currentRouterPath={props.location.pathname} onItemSelection={this.handleChangingSelectedItem} />} />
+
+
                 <Route component={Error404} />
+
               </Switch>
             </div>
             <div className="footer">

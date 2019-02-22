@@ -9,8 +9,10 @@ function Admin(props){
   return (
     <div>
       <h3>Admin</h3>
-      <ItemList itemList={props.itemList}
+      <ItemList
+        itemList={props.itemList}
         currentRouterPath={props.currentRouterPath}
+        onItemSelection={props.onItemSelection}
         />
       <hr />
       <ItemDetail />
@@ -22,7 +24,8 @@ function Admin(props){
 
 Admin.propTypes = {
   itemList: PropTypes.array,
-  currentRouterPath: PropTypes.string.isRequired
+  currentRouterPath: PropTypes.string.isRequired,
+  onItemSelection: PropTypes.func.isRequired
 
 };
 
