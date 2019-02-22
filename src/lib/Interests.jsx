@@ -20,6 +20,7 @@ const styles = {
   },
   title: {
     fontSize: 14,
+    color: "red",
   },
   pos: {
     marginBottom: 12,
