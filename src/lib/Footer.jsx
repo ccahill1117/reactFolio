@@ -5,9 +5,7 @@ import PropTypes from 'prop-types';
 
 function Footer(){
   return (
-    <div style={{
-        margin: '20px',
-      }}>
+    <div>
       Copyright Christopher Thomas Cahill 2019
       <br></br>
       <Link to="/contact">Reach out ...</Link>

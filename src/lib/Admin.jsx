@@ -7,7 +7,6 @@ import ItemDetail from './ItemDetail';
 
 function Admin(props){
   let selectedItemContent = null;
-
   if (props.selectedItem != null){
     selectedItemContent =  <ItemDetail selectedItem={props.selectedItem} />;
   }

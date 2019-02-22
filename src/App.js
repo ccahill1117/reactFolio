@@ -44,11 +44,10 @@ class App extends React.Component {
     newMasterItemList.push(newItem);
     this.setState({masterItemList: newMasterItemList});
   }
-
   handleChangingSelectedItem(item){
     this.setState({selectedItem: item});
   }
-  
+
  componentDidMount() {
    console.log('hey');
    this.waitTimeUpdateTimer = setInterval(() =>

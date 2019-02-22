@@ -23,7 +23,6 @@ function Item(props){
       </div>
     );
   }
-
 }
 
 Item.propTypes = {
