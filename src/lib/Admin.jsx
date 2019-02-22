@@ -5,10 +5,14 @@ import ItemList from './ItemList';
 import ItemDetail from './ItemDetail';
 
 function Admin(props){
-
+  let selectedItemContent = null;
+  if (props.selectedItem != null){
+    selectedItemContent =  <ItemDetail selectedItem={props.selectedItem} />;
+  }
   return (
     <div>
       <h3>Admin</h3>
+      {selectedItemContent}
       <ItemList
         itemList={props.itemList}
         currentRouterPath={props.currentRouterPath}
@@ -25,7 +29,8 @@ function Admin(props){
 Admin.propTypes = {
   itemList: PropTypes.array,
   currentRouterPath: PropTypes.string.isRequired,
-  onItemSelection: PropTypes.func.isRequired
+  onItemSelection: PropTypes.func.isRequired,
+  selectedItem: PropTypes.object
 
 };
 

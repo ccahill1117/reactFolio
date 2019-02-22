@@ -11,7 +11,6 @@ import Moment from 'moment';
 class Fun extends React.Component {
 
 
-
 render(){
   return (
     <div>

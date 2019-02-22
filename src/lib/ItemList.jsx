@@ -14,8 +14,8 @@ function ItemList(props){
           blah={item.blah}
           formattedWaitTime={item.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
-          onItemSelection={props.onItemSelection}
-          key={item.id}/>
+          key={item.id}
+         onItemSelection={props.onItemSelection}/>
       )}
     </div>
   );

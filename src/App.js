@@ -31,7 +31,6 @@ class App extends React.Component {
 
   handleChangingSelectedItem(item){
     this.setState({selectedItem: item});
-    console.log('The selected item is now: ' + this.state.selectedItem.name);
   }
 
   updateItemElapsedWaitTime() {
@@ -50,37 +49,11 @@ class App extends React.Component {
     this.setState({masterItemList: newMasterItemList});
   }
 
-  componentWillUnmount(){
-    console.log('componentWillUnmount');
-    clearInterval(this.waitTimeUpdateTimer);
-  }
-
-  componentWillMount() {
-    console.log('componentWillMount');
-  }
-
-  componentWillReceiveProps() {
-    console.log('componentWillReceiveProps');
-  }
-
-  shouldComponentUpdate() {
-    console.log('shouldComponentUpdate');
-    return true;
-  }
-
-  componentWillUpdate() {
-    console.log('componentWillUpdate');
-  }
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
-
  componentDidMount() {
    console.log('hey');
    this.waitTimeUpdateTimer = setInterval(() =>
      this.updateItemElapsedWaitTime(),
-     1000
+     60000
    );
  }
 
@@ -100,10 +73,13 @@ class App extends React.Component {
                 <Route exact path='/bio' component={Bio} />
                 <Route exact path='/project' component={Project} />
                 <Route exact path='/contact' component={Contact} />
+
                 <Route exact path='/fun' render={()=><ItemList itemList={this.state.masterItemList} />} />
+
                 <Route exact path='/newitem' render={()=><NewItemControl onNewItemCreation={this.handleAddingNewItemToList} />} />
 
-               <Route path='/admin' render={(props)=><Admin itemList={this.state.masterItemList} currentRouterPath={props.location.pathname} onItemSelection={this.handleChangingSelectedItem} />} />
+               <Route path='/admin' render={(props)=><Admin itemList={this.state.masterItemList} currentRouterPath={props.location.pathname} onItemSelection={this.handleChangingSelectedItem}
+               selectedItem={this.state.selectedItem}/>} />
 
 
                 <Route component={Error404} />
