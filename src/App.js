@@ -14,6 +14,7 @@ import Contact from './lib/Contact';
 import Error404 from './lib/Error404';
 import logo from './logo.svg';
 import PropTypes from 'prop-types';
+import Admin from './lib/Admin';
 import './App.css';
 
 class App extends React.Component {
@@ -92,12 +93,9 @@ class App extends React.Component {
                 <Route exact path='/bio' component={Bio} />
                 <Route exact path='/project' component={Project} />
                 <Route exact path='/contact' component={Contact} />
-
                 <Route exact path='/fun' render={()=><ItemList itemList={this.state.masterItemList} />} />
-
                 <Route exact path='/newitem' render={()=><NewItemControl onNewItemCreation={this.handleAddingNewItemToList} />} />
-
-
+                 <Route path='/admin' render={()=><Admin itemList={this.state.masterItemList} />} />
                 <Route component={Error404} />
               </Switch>
             </div>
