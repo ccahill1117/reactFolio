@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
 import ItemList from './ItemList';
+import ItemDetail from './ItemDetail';
 
 function Admin(props){
 
@@ -11,7 +12,8 @@ function Admin(props){
       <ItemList itemList={props.itemList}
         currentRouterPath={props.currentRouterPath}
         />
-
+      <hr />
+      <ItemDetail />
       <hr/>
     </div>
   );
@@ -19,7 +21,7 @@ function Admin(props){
 
 
 Admin.propTypes = {
-  ticketList: PropTypes.array,
+  itemList: PropTypes.array,
   currentRouterPath: PropTypes.string.isRequired
 
 };
