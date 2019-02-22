@@ -6,8 +6,6 @@ import Moment from 'moment';
 
 function ItemList(props){
 
-
-
   console.log(props.itemList);
   return (
     <div>
@@ -16,13 +14,16 @@ function ItemList(props){
         <Item name={item.name}
           blah={item.blah}
           formattedWaitTime={item.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
           key={item.id}/>
       )}
     </div>
   );
 }
 
-
-
+ItemList.propTypes = {
+  itemList: PropTypes.array,
+  currentRouterPath: PropTypes.string
+};
 
 export default ItemList;

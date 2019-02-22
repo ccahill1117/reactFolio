@@ -95,7 +95,7 @@ class App extends React.Component {
                 <Route exact path='/contact' component={Contact} />
                 <Route exact path='/fun' render={()=><ItemList itemList={this.state.masterItemList} />} />
                 <Route exact path='/newitem' render={()=><NewItemControl onNewItemCreation={this.handleAddingNewItemToList} />} />
-                 <Route path='/admin' render={()=><Admin itemList={this.state.masterItemList} />} />
+                 <Route path='/admin' render={(props)=><Admin itemList={this.state.masterItemList} currentRouterPath={props.location.pathname} />} />
                 <Route component={Error404} />
               </Switch>
             </div>

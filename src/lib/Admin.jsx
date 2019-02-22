@@ -4,10 +4,13 @@ import Moment from 'moment';
 import ItemList from './ItemList';
 
 function Admin(props){
+
   return (
     <div>
       <h3>Admin</h3>
-
+      <ItemList itemList={props.itemList}
+        currentRouterPath={props.currentRouterPath}
+        />
 
       <hr/>
     </div>
@@ -17,6 +20,7 @@ function Admin(props){
 
 Admin.propTypes = {
   ticketList: PropTypes.array,
+  currentRouterPath: PropTypes.string.isRequired
 
 };
 

@@ -17,7 +17,8 @@ function Item(props){
 Item.propTypes = {
   name: PropTypes.string.isRequired,
   blah: PropTypes.string.isRequired,
-  formattedWaitTime: PropTypes.string.isRequired
+  formattedWaitTime: PropTypes.string.isRequired,
+  currentRouterPath: PropTypes.string
 
 };
 

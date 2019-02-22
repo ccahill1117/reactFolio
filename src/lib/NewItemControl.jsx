@@ -19,7 +19,6 @@ class NewItemControl extends React.Component {
 
   render(){
     let currentlyVisibleContent = <NewItemForm onNewItemCreation={this.props.onNewItemCreation}/>;
-
     return (
       <div>
         {currentlyVisibleContent}
