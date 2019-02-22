@@ -22,9 +22,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterItemList: []
+      masterItemList: [],
+      selectedTicket: null,
     };
     this.handleAddingNewItemToList = this.handleAddingNewItemToList.bind(this);
+    this.handleChangingSelectedItem = this.handleChangingSelectedItem.bind(this);
+  }
+
+  handleChangingSelectedItem(item){
+    this.setState({selectedItem: item});
+    console.log('The selected item is now: ' + this.state.selectedItem.names);
   }
 
   updateItemElapsedWaitTime() {
