@@ -23,22 +23,18 @@ class App extends React.Component {
     super(props);
     this.state = {
       masterItemList: [],
-      selectedItem: null,
+      selectedItem: null
     };
     this.handleAddingNewItemToList = this.handleAddingNewItemToList.bind(this);
     this.handleChangingSelectedItem = this.handleChangingSelectedItem.bind(this);
   }
 
-  handleChangingSelectedItem(item){
-    this.setState({selectedItem: item});
-  }
 
   updateItemElapsedWaitTime() {
-     console.log("check");
      let newMasterItemList = this.state.masterItemList.slice();
      newMasterItemList.forEach((item) =>
-       item.formattedWaitTime = (item.timeCreated).fromNow(true)
-     );
+     item.formattedWaitTime = (item.timeCreated).fromNow(true)
+   );
      this.setState({masterItemList: newMasterItemList})
    }
 
@@ -49,6 +45,10 @@ class App extends React.Component {
     this.setState({masterItemList: newMasterItemList});
   }
 
+  handleChangingSelectedItem(item){
+    this.setState({selectedItem: item});
+  }
+  
  componentDidMount() {
    console.log('hey');
    this.waitTimeUpdateTimer = setInterval(() =>

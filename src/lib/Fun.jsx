@@ -10,6 +10,11 @@ import Moment from 'moment';
 
 class Fun extends React.Component {
 
+  constructor(props) {
+    this.state = {
+
+    }
+  }
 
 render(){
   return (
@@ -19,6 +24,10 @@ render(){
   );
 }
 
+}
+
+Fun.propTypes = {
+  ticketList: PropTypes.array,
 }
 
 export default Fun;

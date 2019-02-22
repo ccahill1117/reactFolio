@@ -4,11 +4,14 @@ import Moment from 'moment';
 import ItemList from './ItemList';
 import ItemDetail from './ItemDetail';
 
+
 function Admin(props){
   let selectedItemContent = null;
+
   if (props.selectedItem != null){
     selectedItemContent =  <ItemDetail selectedItem={props.selectedItem} />;
   }
+
   return (
     <div>
       <h3>Admin</h3>
@@ -18,9 +21,6 @@ function Admin(props){
         currentRouterPath={props.currentRouterPath}
         onItemSelection={props.onItemSelection}
         />
-      <hr />
-      <ItemDetail />
-      <hr/>
     </div>
   );
 }
