@@ -11,9 +11,7 @@ import Moment from 'moment';
 class Fun extends React.Component {
 
   constructor(props) {
-    this.state = {
-
-    }
+    
   }
 
 render(){
