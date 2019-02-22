@@ -10,7 +10,9 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
   card: {
-    minWidth: 275,
+    width: 275,
+    margin: 20,
+
   },
   bullet: {
     display: 'inline-block',
@@ -25,36 +27,37 @@ const styles = {
   },
 };
 
-function Interest(props){
+function InterestCard(props){
+
   return (
-
     <div>
-    <Card style={styles.card}>
-    <CardContent>
-      <Typography style={styles.title} color="textSecondary" gutterBottom>
-        Word of the Day
-      </Typography>
-      <Typography variant="h5" component="h2">
-
-      </Typography>
-      <Typography style={styles.pos} color="textSecondary">
-        adjective
-      </Typography>
-      <Typography component="p">
-        well meaning and kindly.
-        <br />
-        {'"a benevolent smile"'}
-      </Typography>
-    </CardContent>
-    <CardActions>
-      <Button size="small">Learn More</Button>
-    </CardActions>
-  </Card>
-
+      <Card style={styles.card}>
+        <CardContent>
+          <Typography style={styles.title} color="textSecondary" gutterBottom>
+            {props.title}
+          </Typography>
+          <Typography variant="h5" component="h3">
+            {props.text}
+          </Typography>
+          <Typography style={styles.pos} color="textSecondary">
+            {props.link}
+          </Typography>
+          <Typography component="p">
+            <h5>some text!</h5>
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Link to="www.google.com"><Button size="small">Learn More</Button></Link>
+        </CardActions>
+      </Card>
     </div>
   );
 }
 
+InterestCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  link: PropTypes.string,
+};
 
-
-export default Interest;
+export default InterestCard;

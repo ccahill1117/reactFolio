@@ -25,7 +25,6 @@ function Project(){
       justifyContent: 'center',
   }
 
-
   return (
     <div>
         {myProjects.map((item, i) =>

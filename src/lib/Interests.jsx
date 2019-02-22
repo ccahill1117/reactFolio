@@ -11,7 +11,7 @@ import InterestCard from './InterestCard';
 
 const styles = {
   card: {
-    minWidth: 275,
+  
   },
   bullet: {
     display: 'inline-block',
@@ -27,31 +27,57 @@ const styles = {
   },
 };
 
+const myInterests = [
+  {
+    title: "oh",
+    text: "fun",
+    link: "www.christophercahill.co",
+  },
+  {
+    title: "another",
+    text: "funny",
+    link: "thing.com",
+  },
+  {
+    title: "oh",
+    text: "fun",
+    link: "www.christophercahill.co",
+  },
+  {
+    title: "another",
+    text: "funny",
+    link: "thing.com",
+  },
+  {
+    title: "oh",
+    text: "fun",
+    link: "www.christophercahill.co",
+  },
+  {
+    title: "another",
+    text: "funny",
+    link: "thing.com",
+  },
+];
+
 function Interest(props){
   return (
 
-    <div>
-    <Card style={styles.card}>
-    <CardContent>
-      <Typography style={styles.title} color="textSecondary" gutterBottom>
-        Word of the Day
-      </Typography>
-      <Typography variant="h5" component="h2">
-
-      </Typography>
-      <Typography style={styles.pos} color="textSecondary">
-        adjective
-      </Typography>
-      <Typography component="p">
-        well meaning and kindly.
-        <br />
-        {'"a benevolent smile"'}
-      </Typography>
-    </CardContent>
-    <CardActions>
-      <Button size="small">Learn More</Button>
-    </CardActions>
-  </Card>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, 300px)',
+      justifyContent: 'center',
+      }}>
+      {myInterests.map((item, i) =>
+        <div>
+          <InterestCard
+            title={item.title}
+            text={item.text}
+            link={item.link}
+            key={i}
+            />
+        </div>
+        )}
 
     </div>
   );
