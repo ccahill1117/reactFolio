@@ -13,13 +13,15 @@ First clone this repository, then, in the project directory, you can run:
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
 ### Basic Outline of web app going forward :
 
 <img src="./public/portfolio_react_outline_2019-02-15.jpeg">
 
+Original version included no state
+
 ### Updated Outline of web app including state :
 
 <img src="./public/portfolio_react_outline_2019-02-22.jpeg">
+
+Updated version with state at App and NewItemControl.
