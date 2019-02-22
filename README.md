@@ -19,3 +19,7 @@ You will also see any lint errors in the console.
 ### Basic Outline of web app going forward :
 
 <img src="./public/portfolio_react_outline_2019-02-15.jpeg">
+
+### Updated Outline of web app including state :
+
+<img src="./public/portfolio_react_outline_2019-02-22.jpeg">
