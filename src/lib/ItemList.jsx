@@ -9,20 +9,23 @@ function ItemList(props){
   return (
     <div>
       <hr/>
-      {props.itemList.map((item) =>
-        <Item name={item.name}
-          blah={item.blah}
-          formattedWaitTime={item.formattedWaitTime}
-          currentRouterPath={props.currentRouterPath}
-          key={item.id}
-         onItemSelection={props.onItemSelection}/>
-      )}
+      {Object.keys(props.itemList).map(function(itemId) {
+        var item = props.itemList[itemId];
+        return <Item name={item.name}
+        blah={item.blah}
+        formattedWaitTime={item.formattedWaitTime}
+        currentRouterPath={props.currentRouterPath}
+        key={item.id}
+        onItemSelection={props.onItemSelection}
+        itemId={item.id}/>;
+      })}
     </div>
   );
 }
 
+
 ItemList.propTypes = {
-  itemList: PropTypes.array,
+  itemList: PropTypes.object,
   currentRouterPath: PropTypes.string,
   onItemSelection: PropTypes.func
 

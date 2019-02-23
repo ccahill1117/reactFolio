@@ -29,7 +29,7 @@ Admin.propTypes = {
   itemList: PropTypes.array,
   currentRouterPath: PropTypes.string.isRequired,
   onItemSelection: PropTypes.func.isRequired,
-  selectedItem: PropTypes.object
+  selectedItem: PropTypes.string
 
 };
 

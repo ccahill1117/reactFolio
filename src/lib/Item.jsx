@@ -12,7 +12,7 @@ function Item(props){
     </div>;
     if (props.currentRouterPath === '/admin'){
     return (
-      <div onClick={() => {props.onItemSelection({name: props.name, blah: props.blah, formattedWaitTime: props.formattedWaitTime});}}>
+      <div onClick={() => {props.onItemSelection(props.itemId);}}>
         {itemInformation}
       </div>
     );
@@ -30,7 +30,8 @@ Item.propTypes = {
   blah: PropTypes.string.isRequired,
   formattedWaitTime: PropTypes.string.isRequired,
   currentRouterPath: PropTypes.string,
-  onItemSelection: PropTypes.func
+  onItemSelection: PropTypes.func,
+  itemId: PropTypes.string.isRequired
 
 };
 
