@@ -15,6 +15,7 @@ import Error404 from './lib/Error404';
 import logo from './logo.svg';
 import PropTypes from 'prop-types';
 import Admin from './lib/Admin';
+import { v4 } from 'uuid';
 import './App.css';
 
 class App extends React.Component {
@@ -29,7 +30,6 @@ class App extends React.Component {
     this.handleChangingSelectedItem = this.handleChangingSelectedItem.bind(this);
   }
 
-
   updateItemElapsedWaitTime() {
     var newMasterItemList = Object.assign({}, this.state.masterItemList);
     Object.keys(newMasterItemList).forEach(itemId => {
@@ -39,10 +39,11 @@ class App extends React.Component {
   }
 
   handleAddingNewItemToList(newItem){
+    var newItemId = v4();
     var newMasterItemList = Object.assign({}, this.state.masterItemList, {
-      [newItem.id]: newItem
+      [newItemId]: newItem
     });
-    newMasterItemList[newItem.id].formattedWaitTime = newMasterItemList[newItem.id].timeCreated.fromNow(true);
+    newMasterItemList[newItemId].formattedWaitTime = newMasterItemList[newItemId].timeCreated.fromNow(true);
     this.setState({masterItemList: newMasterItemList});
   }
   handleChangingSelectedItem(item){
@@ -58,6 +59,7 @@ class App extends React.Component {
  }
 
     render(){
+      console.log(this.state.masterItemList);
       return (
         <div className="App">
           <div className="wrapper">

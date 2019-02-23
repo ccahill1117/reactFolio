@@ -11,7 +11,7 @@ function NewItemForm(props){
 
   function handleNewItemFormSubmission(event) {
     event.preventDefault();
-    props.onNewItemCreation({name: _name.value, blah: _blah.value, id: v4(), timeCreated: new Moment()});
+    props.onNewItemCreation({name: _name.value, blah: _blah.value, timeCreated: new Moment()});
     _name.value = '';
     _blah.value = '';
 
