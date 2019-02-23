@@ -18,7 +18,6 @@ const myProjects = [
 
 function Project(){
   var projectCardGrid = {
-      color: 'blue',
       display: 'grid',
       gridGap: '1em',
       gridTemplateColumns: 'repeat(auto-fit, 200px)',
@@ -26,7 +25,7 @@ function Project(){
   }
 
   return (
-    <div>
+    <div style={projectCardGrid}>
         {myProjects.map((item, i) =>
             <ProjectCard
               title={item.title}
