@@ -4,6 +4,10 @@ By Christopher Thomas Cahill
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Deployed to the WorldWideWeb via AWS CLI
+
+Feel free to checkout my personal website at [http://www.christophercahill.co/#/](http://www.christophercahill.co/#/)
+
 ### Run this project on your machine :
 
 First clone this repository, then, in the project directory, you can run:
