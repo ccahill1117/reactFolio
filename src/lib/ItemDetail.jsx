@@ -8,6 +8,7 @@ function ItemDetail(props){
       <h2>{props.selectedItem.name}</h2>
       <h3>{props.selectedItem.blah}</h3>
       <h4>{props.selectedItem.formattedWaitTime}</h4>
+
     </div>
   );
 }

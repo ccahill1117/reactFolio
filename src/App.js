@@ -46,7 +46,7 @@ class App extends React.Component {
     this.setState({masterItemList: newMasterItemList});
   }
   handleChangingSelectedItem(item){
-    this.setState({selectedItem: itemId);
+    this.setState({selectedItem: item});
   }
 
  componentDidMount() {
